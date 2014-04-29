@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.codepath.apps.mytwitterapp.ComposeActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <Button
+        android:id="@+id/cancelTweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:onClick= "onCancelTweet"
+        android:text="@string/cancel_tweet" />
+    	
+
+    <EditText
+        android:id="@+id/composeText"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_below="@+id/cancelTweet"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:hint="Type Tweet Here"
+        android:inputType="textMultiLine" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/sendTweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/cancelTweet"
+        android:layout_alignBottom="@+id/cancelTweet"
+        android:layout_alignParentRight="true"
+        android:onClick="onSendTweet"
+        android:text="@string/send_tweet" />
+
+</RelativeLayout>
