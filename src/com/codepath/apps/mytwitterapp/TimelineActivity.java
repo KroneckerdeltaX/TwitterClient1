@@ -42,10 +42,10 @@ public class TimelineActivity extends ActionBarActivity {
 		});
 		
 
-		if (savedInstanceState == null) {
-			getSupportFragmentManager().beginTransaction()
-					.add(R.id.container, new PlaceholderFragment()).commit();
-		}
+		//if (savedInstanceState == null) {
+			//getSupportFragmentManager().beginTransaction()
+					//.add(R.id.container, new PlaceholderFragment()).commit();
+		//}
 	}
 
 	@Override
@@ -76,14 +76,17 @@ public class TimelineActivity extends ActionBarActivity {
 		return super.onOptionsItemSelected(item);
 	}
 	protected void onActivityResult(int requestCode, int resultCode, Intent i) {
+		if (resultCode != ComposeActivity.RESULT_CANCELED ) {
 		// there is data in this intent, piece of text.. save as variable here
 		String string_tweet_text = i.getExtras().getString("composeText");
 		MyTwitterApp.getRestClient().postTweetTwitterServer(new JsonHttpResponseHandler() {
 			@Override
 			public void onSuccess(JSONArray jsonTweets){
 				
-			}
+			}		
+	
 		}, string_tweet_text);
+	}
 		
 		MyTwitterApp.getRestClient().getHomeTimeline(new JsonHttpResponseHandler() {
 			@Override

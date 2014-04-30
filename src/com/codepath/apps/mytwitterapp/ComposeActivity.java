@@ -35,10 +35,14 @@ public class ComposeActivity extends ActionBarActivity {
 	}
 	
 	
-	//public void onCancelTweet (View v){
+	public void onCancelTweet (View v){
+		
+		Intent i = new Intent();
+		setResult(RESULT_CANCELED,i);
+		finish();
 		
 		
-	//}
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
